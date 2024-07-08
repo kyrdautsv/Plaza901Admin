@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Plaza UTSV | TIC</title>
-
+  <title>Productos Vendidos | Plaza UTSV</title>
+  
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -25,6 +25,14 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <style>
+    .product-item {
+      border: 1px solid #ccc;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -95,25 +103,9 @@
             </div>
             <!-- Message End -->
           </a>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start 
-            <div class="media">
-              <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Nora Silvester
-                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">The subject goes here</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-             Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">Ver Todo</a>
         </div>
       </li>
+
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -217,7 +209,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Productos
@@ -225,34 +217,15 @@
               </p>
             </a>
           </li>
-
-          <li class="nav-header">Reportes</li>
           <li class="nav-item">
-            <a href="pages/calendar.html" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
+            <a href="pages/widgets.html" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
               <p>
-                Planes de Membresia
-                <span class="badge badge-info right">2</span>
+                Reportes
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
-              <p>
-                Emprendedores
-              </p>
-            </a>
-          </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pedidos</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -267,12 +240,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Estadísticas</h1>
+            <h1 class="m-0">Productos Vendidos</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-              <li class="breadcrumb-item active">Estadísticas</li>
+              <li class="breadcrumb-item active">Productos Vendidos</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -283,90 +256,17 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>150</h3>
-
-                <p>Pedidos</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                <p>Miembros</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="#" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>44</h3>
-
-                <p>Productos</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="productos_vendidos.html" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>65</h3>
-
-                <p>Visitas Únicas</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-        </div>
-        <!-- /.row -->
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-
-          <!-- /.Left col -->
-
-          <!-- right col -->
-        </div>
-        <!-- /.row (main row) -->
+        <div id="sold-products-container"></div>
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2024 <a href="https://kyrda.com.mx">Kyrda</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.1.0
+    <div class="float-right d-none d-sm-block">
+      <b>Versión</b> 3.1.0
     </div>
+    <strong>Copyright &copy; 2023 <a href="#">Plaza UTSV</a>.</strong> Todos los derechos reservados.
   </footer>
 
   <!-- Control Sidebar -->
@@ -411,5 +311,33 @@
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
+
+<script>
+  $(document).ready(function() {
+    function displaySoldProducts() {
+      var soldProducts = JSON.parse(localStorage.getItem('soldProducts')) || [];
+      var soldProductsContainer = $('#sold-products-container');
+      
+      if (soldProducts.length === 0) {
+        soldProductsContainer.html('<p>No hay productos vendidos.</p>');
+      } else {
+        soldProducts.forEach(function(product) {
+          soldProductsContainer.append(`
+            <div class="product-item">
+              <h4>${product.name}</h4>
+              <p>${product.description}</p>
+              <p>Precio: $${product.price}</p>
+              <p>Cantidad: ${product.quantity}</p>
+              <p>Total: $${(product.price * product.quantity).toFixed(2)}</p>
+            </div>
+          `);
+        });
+      }
+    }
+
+    displaySoldProducts();
+  });
+</script>
+
 </body>
 </html>
