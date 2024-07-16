@@ -906,30 +906,74 @@
         });
     </script>
 </head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
 <body>
     <div class="container">
         <h1>AGREGAR PRODUCTO</h1>
         <form id="formularioAgregar">
-            <label for="categoria">Categoria:</label>
-            <input type="text" id="categoria" name="categoria" required placeholder="Ej. Zapatos, Maquillaje, Ropa..."><br>
+            <label for="categoria">Categoría:</label>
+            <input type="text" id="categoria" name="categoria" required placeholder="Ej. Zapatos, Maquillaje, Ropa...">
             <label for="nombre">Nombre del producto:</label>
-            <input type="text" id="nombre" name="nombre" required placeholder="Ej. Zapatilla para Dama, Bissu Sombra"><br>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ej. Zapatilla para Dama, Bissu Sombra">
             <label for="precio">Precio:</label>
-            <input type="number" id="precio" name="precio" required><br>
+            <input type="number" id="precio" name="precio" required>
             <label for="marca">Marca:</label>
-            <input type="text" id="marca" name="marca" required placeholder="Ej. Bissu, Flexi"><br>
+            <input type="text" id="marca" name="marca" required placeholder="Ej. Bissu, Flexi">
             <label for="cantidad">Cantidad de Producto:</label>
-            <input type="number" id="cantidad" name="cantidad" required><br>
+            <input type="number" id="cantidad" name="cantidad" required>
             <label for="imagen">Imagen del producto:</label>
-            <input type="file" id="imagen" name="imagen" accept="image/*" required><br>
+            <input type="file" id="imagen" name="imagen" accept="image/*" required>
             <button type="button" id="agregarProducto">Agregar producto</button>
         </form>
         <hr>
-        <ul id="lista">
-        </ul>
+        <ul id="lista"></ul>
         <div class="message"></div>
     </div>
 </body>
+</html>
+
   <!-- Main Footer -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
