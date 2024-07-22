@@ -77,7 +77,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="emprendedor.html" class="nav-link">
+              <a href="emprendedor.php" class="nav-link">
                 <i class="nav-icon far fa-image"></i>
                 <p>
                   Emprendedores
