@@ -203,7 +203,7 @@
             </div>
           </div>
         </div>
-
+        <?php include("menulateral.php");  ?>
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
@@ -451,4 +451,3 @@
 </body>
 
 </html>
-
