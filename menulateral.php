@@ -54,6 +54,12 @@
                     <p>Permisos</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="./registro.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Registro</p>
+                  </a>
+                </li>
               </ul>
             </li>
             <li class="nav-item">
