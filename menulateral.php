@@ -103,7 +103,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="productos_vendidos.html" class="nav-link">
+              <a href="productos_vendidos.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Productos Vendidos</p>
               </a>
