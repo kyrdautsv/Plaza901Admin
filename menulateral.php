@@ -74,7 +74,7 @@
 
             <li class="nav-header">Reportes</li>
             <li class="nav-item">
-              <a href="pages/calendar.html" class="nav-link">
+              <a href="infoplan.php" class="nav-link">
                 <i class="nav-icon far fa-calendar-alt"></i>
                 <p>
                   Planes de Membresia
