@@ -193,11 +193,78 @@
 
             <div class="container">
                 <!-- Card Deck -->
+                <div class="container">
+                <!-- Card Deck -->
                 <div class="row">
-             
+                                    <!-- Planes -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card mb-4 rounded-3 shadow-sm" style="border-radius:1rem;">
+                            <div class="card-header">
+                                <h1 class="my-0 font-weight-normal">Gratis</h1>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title" style="font-size: 40px;">$0 <small class="text-muted">/ Mes</small></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <br>
+                                    <li style="margin-top: 1rem;"><b>Gratis Para Siempre</b></li>
 
-                 hola
-                </div>
+                                    <li>Uso Limitado</li>
+                                    <li>Elementos Limitado</li>
+                                    <li>Plantillas Limitado</li>
+                                    <li>Hasta 2 Usuarios</li>
+                                </ul>
+                                <button type="button" class="btn btn-lg btn-block btn-primary">Continuar con el Gratis</button>
+                            </div>
+                        </div>
+                    </div>
+
+                                        <!-- Planes -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card mb-4 rounded-3 shadow-sm" style="border-radius:1rem;">
+                            <div class="card-header">
+                                <h1 class="my-0 font-weight-normal">Basico</h1>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title" style="font-size: 40px;">$190 <small class="text-muted">/ Mes</small></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <br>
+                                    <li style="margin-top: 1rem;"><b>El plan Basico Incluye:</b></li>
+
+                                    <li>Elementos Ilimitados</li>
+                                    <li>Tableros Ilimitados</li>
+                                    <li>Mas de 200 plantillas</li>
+                                    <li> Espectadores Ilimitados</li>
+                                </ul>
+                                <button type="button" class="btn btn-lg btn-block btn-primary">Continuar con el Basico</button>
+                            </div>
+                        </div>
+                    </div>
+
+                                        <!-- Planes -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card mb-4 rounded-3 shadow-sm" style="border-radius:1rem;">
+                            <div class="card-header">
+                                <h1 class="my-0 font-weight-normal">Estandar</h1>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title" style="font-size: 40px;">$240 <small class="text-muted">/ Mes</small></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <br>
+                                    <li style="margin-top: 1rem;"><b>Incluye Basico Mas: </b></li>
+
+                                    <li>Vista de Calendario</li>
+                                    <li>Acceso a invitados</li>
+                                    <li>Automatización</li>
+                                    <li>Vista de Cronograma</li>
+                                </ul>
+                                <button type="button" class="btn btn-lg btn-block btn-primary">Continuar con el Estandar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                                    </div>
+            </div>
+
             </div>
 
             <a class="btn btn-primary btn-sm" style="text-align: center;" href="agregar.php">Agregar Planes</a>
