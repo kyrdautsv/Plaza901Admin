@@ -165,7 +165,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper  p-3">
     <div class="row g-4 g-lg-6 g-xl-7 mb-6 mb-lg-7 mb-xl-10 align-items-center">
-        <div class="col-12 col-lg-6"><img class="img-fluid w-lg-100" src="docs/assets/img/man_watering.png" alt=""></div>
+        <div class="col-12 col-lg-6"><img class="img-fluid w-lg-100" src="dist/img/man_watering.png" alt=""></div>
         <div class="col-12 col-lg-6">
           <h1 class="fs-5 fs-md-3 fs-xxl-2 text-black fw-light mb-4">Explora <span class="fw-bold">Los mejores Planes </span>que tenemos para ti </h1>
           <p><b>
