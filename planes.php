@@ -1,6 +1,4 @@
-<?php
-include 'conexion.php';
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,10 +33,7 @@ include 'conexion.php';
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
-        <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-        </div>
+
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -199,35 +194,9 @@ include 'conexion.php';
             <div class="container">
                 <!-- Card Deck -->
                 <div class="row">
-                <?php
+             
 
-                    $sql = "SELECT * FROM planes";
-                    $resultado = $conn->query($sql);
-                    while ($planes = $resultado->fetch_assoc()) {
-                    ?>
-                    <!-- Planes -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card mb-4 rounded-3 shadow-sm" style="border-radius:1rem;">
-                            <div class="card-header">
-                                <h1 class="my-0 font-weight-normal"><?php echo $planes['tipo_plan'] ?></h1>
-                            </div>
-                            <div class="card-body">
-                                <h1 class="card-title pricing-card-title" style="font-size: 40px;">$<?php echo $planes['precio'] ?> <small class="text-muted">/ <?php echo $planes['periodo'] ?></small></h1>
-                                <ul class="list-unstyled mt-3 mb-4">
-                                    <br>
-                                    <li style="margin-top: 1rem;"><b><?php echo $planes['descripcion_1'] ?></b></li>
-
-                                    <li><?php echo $planes['descripcion_2'] ?></li>
-                                    <li><?php echo $planes['descripcion_3'] ?></li>
-                                    <li><?php echo $planes['descripcion_4'] ?></li>
-                                    <li><?php echo $planes['descripcion_5'] ?></li>
-                                </ul>
-                                <button type="button" class="btn btn-lg btn-block btn-primary">Continuar con el <?php echo $planes['tipo_plan'] ?></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <?php } ?>
+                 hola
                 </div>
             </div>
 
