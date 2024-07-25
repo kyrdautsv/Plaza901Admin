@@ -263,152 +263,198 @@
 </body>
 </html>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        // Función para agregar 
-        function agregarProducto() {
-            var formData = new FormData();
-            formData.append('accion', 'agregar');
-            formData.append('categoria', $('#categoria').val());
-            formData.append('nombre', $('#nombre').val());
-            formData.append('precio', $('#precio').val());
-            formData.append('marca', $('#marca').val());
-            formData.append('cantidad', $('#cantidad').val());
-
-            // Añadir imagen al FormData
-            var imagen = $('#imagen')[0].files[0];
-            formData.append('imagen', imagen);
-
-            $.ajax({
-                type: 'POST',
-                url: 'producto.php',
-                data: formData,
-                contentType: false,
-                processData: false,
-                dataType: 'json',
-                success: function (response) {
-                    $('.message').text(response.mensaje);
-                    $('#lista').append('<li>' + nombre + ' tiene un costo de $' + precio + ' de la marca ' + marca + '. <button class="eliminar" data-nombre="' + nombre + '">Eliminar</button></li>');
-
-                    // Limpiar los campos del formulario
-                    $('#categoria').val('');
-                    $('#nombre').val('');
-                    $('#precio').val('');
-                    $('#marca').val('');
-                    $('#cantidad').val('');
-                    $('#imagen').val('');
-                },
-                error: function (xhr, status, error) {
-                    $('.message').text('Error al agregar el producto, invalido');
-                }
-            });
-        }
-
-        // Función para eliminar 
-        function eliminarProducto() {
-            var nombreM = $(this).data('nombre');
-            var elementoLista = $(this).parent(); // Obtener el elemento de la lista
-
-            $.ajax({
-                type: 'POST',
-                url: 'producto.php',
-                data: {
-                    accion: 'eliminar',
-                    nombreM: nombreM
-                },
-                dataType: 'json',
-                success: function (response) {
-                    $('.message').text(response.mensaje);
-                    elementoLista.fadeOut(400, function () {
-                        $(this).remove(); 
-                    });
-                },
-                error: function (xhr, status, error) {
-                    $('.message').text('Error al eliminar el producto');
-                }
-            });
-        }
-
-        $(document).ready(function () {
-            $('#agregarProducto').click(agregarProducto);
-            $('#lista').on('click', '.eliminar', eliminarProducto);
-        });
-    </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Productos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    .message {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+  </style>
 </head>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="text"],
-        input[type="number"],
-        input[type="file"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Productos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    .message {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>AGREGAR PRODUCTO</h1>
-        <form id="formularioAgregar">
-            <label for="categoria">Categoría:</label>
-            <input type="text" id="categoria" name="categoria" required placeholder="Ej. Zapatos, Maquillaje, Ropa...">
-            <label for="nombre">Nombre del producto:</label>
-            <input type="text" id="nombre" name="nombre" required placeholder="Ej. Zapatilla para Dama, Bissu Sombra">
-            <label for="precio">Precio:</label>
-            <input type="number" id="precio" name="precio" required>
-            <label for="marca">Marca:</label>
-            <input type="text" id="marca" name="marca" required placeholder="Ej. Bissu, Flexi">
-            <label for="cantidad">Cantidad de Producto:</label>
-            <input type="number" id="cantidad" name="cantidad" required>
-            <label for="imagen">Imagen del producto:</label>
-            <input type="file" id="imagen" name="imagen" accept="image/*" required>
-            <button type="button" id="agregarProducto">Agregar producto</button>
-        </form>
-        <hr>
-        <ul id="lista"></ul>
-        <div class="message"></div>
-    </div>
-</body>
-<footer class="main-footer">
-  <strong>Copyright &copy; 2024 <a href="https://kyrda.com.mx">Kyrda</a>.</strong>
-  All rights reserved.
-  <div class="float-right d-none d-sm-inline-block">
-    <b>Version</b> 1.1.0
+  <div class="container">
+    <h1>AGREGAR PRODUCTO</h1>
+    <form id="formularioAgregar">
+      <label for="categoria">Categoría:</label>
+      <input type="text" id="categoria" name="categoria" required placeholder="Ej. Zapatos, Maquillaje, Ropa...">
+      <label for="nombre">Nombre del producto:</label>
+      <input type="text" id="nombre" name="nombre" required placeholder="Ej. Zapatilla para Dama, Bissu Sombra">
+      <label for="precio">Precio:</label>
+      <input type="number" id="precio" name="precio" required>
+      <label for="marca">Marca:</label>
+      <input type="text" id="marca" name="marca" required placeholder="Ej. Bissu, Flexi">
+      <label for="cantidad">Cantidad de Producto:</label>
+      <input type="number" id="cantidad" name="cantidad" required>
+      <label for="imagen">Imagen del producto:</label>
+      <input type="file" id="imagen" name="imagen" accept="image/*" required>
+      <button type="button" id="agregarProducto">Agregar producto</button>
+    </form>
+    <hr>
+    <ul id="lista"></ul>
+    <div class="message"></div>
   </div>
-</footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    function agregarProducto() {
+      var formData = new FormData();
+      formData.append('accion', 'agregar');
+      formData.append('categoria', $('#categoria').val());
+      formData.append('nombre', $('#nombre').val());
+      formData.append('precio', $('#precio').val());
+      formData.append('marca', $('#marca').val());
+      formData.append('cantidad', $('#cantidad').val());
+
+      var imagen = $('#imagen')[0].files[0];
+      formData.append('imagen', imagen);
+
+      $.ajax({
+        type: 'POST',
+        url: 'producto.php',
+        data: formData,
+        contentType: false,
+        processData: false,
+        dataType: 'json',
+        success: function(response) {
+          $('.message').text(response.mensaje);
+          if (response.success) {
+            $('#lista').append('<li>' + $('#nombre').val() + ' tiene un costo de $' + $('#precio').val() + ' de la marca ' + $('#marca').val() + '. <button class="eliminar" data-nombre="' + $('#nombre').val() + '">Eliminar</button></li>');
+            $('#formularioAgregar')[0].reset();
+          }
+        },
+        error: function(xhr, status, error) {
+          $('.message').text('Error al agregar el producto, por favor intenta de nuevo.');
+        }
+      });
+    }
+
+    function eliminarProducto() {
+      var nombre = $(this).data('nombre');
+      var elementoLista = $(this).parent();
+
+      $.ajax({
+        type: 'POST',
+        url: 'producto.php',
+        data: {
+          accion: 'eliminar',
+          nombre: nombre
+        },
+        dataType: 'json',
+        success: function(response) {
+          $('.message').text(response.mensaje);
+          if (response.success) {
+            elementoLista.fadeOut(400, function() {
+              $(this).remove();
+            });
+          }
+        },
+        error: function(xhr, status, error) {
+          $('.message').text('Error al eliminar el producto, por favor intenta de nuevo.');
+        }
+      });
+    }
+
+    $(document).ready(function() {
+      $('#agregarProducto').click(agregarProducto);
+      $('#lista').on('click', '.eliminar', eliminarProducto);
+    });
+  </script>
+</body>
 </html>
+
+
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
