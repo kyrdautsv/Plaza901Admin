@@ -267,7 +267,7 @@
 
             </div>
 
-            <a class="btn btn-primary btn-sm" style="text-align: center;" href="agregar.php">Agregar Planes</a>
+            <!-- <a class="btn btn-primary btn-sm" style="text-align: center;" href="agregar.php">Agregar Planes</a> -->
 
             <!-- /.content -->
         </div>
