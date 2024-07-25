@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <!-- Custom CSS -->
   <style>
     .product-item {
       border: 1px solid #ccc;
@@ -234,34 +235,62 @@
   <script src="dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard.js"></script>
-
+  <!-- Custom JS -->
   <script>
     $(document).ready(function() {
       function displaySoldProducts() {
-        var soldProducts = JSON.parse(localStorage.getItem('soldProducts')) || [];
-        var soldProductsContainer = $('#sold-products-container');
+        try {
+          var soldProducts = JSON.parse(localStorage.getItem('soldProducts')) || [];
+          var soldProductsContainer = $('#sold-products-container');
 
-        if (soldProducts.length === 0) {
-          soldProductsContainer.html('<p>No hay productos vendidos.</p>');
-        } else {
-          soldProducts.forEach(function(product) {
-            soldProductsContainer.append(`
-            <div class="product-item">
-              <h4>${product.name}</h4>
-              <p>${product.description}</p>
-              <p>Precio: $${product.price}</p>
-              <p>Cantidad: ${product.quantity}</p>
-              <p>Total: $${(product.price * product.quantity).toFixed(2)}</p>
-            </div>
-          `);
-          });
+          if (soldProducts.length === 0) {
+            soldProducts = [{
+                name: 'Producto 1',
+                description: 'Descripción del producto 1',
+                price: 10.00,
+                quantity: 2
+              },
+              {
+                name: 'Producto 2',
+                description: 'Descripción del producto 2',
+                price: 20.00,
+                quantity: 1
+              },
+              {
+                name: 'Producto 3',
+                description: 'Descripción del producto 3',
+                price: 15.00,
+                quantity: 3
+              }
+            ];
+            localStorage.setItem('soldProducts', JSON.stringify(soldProducts));
+          }
+
+          if (soldProducts.length === 0) {
+            soldProductsContainer.html('<p>No hay productos vendidos.</p>');
+          } else {
+            soldProductsContainer.empty();
+            soldProducts.forEach(function(product) {
+              soldProductsContainer.append(`
+                <div class="product-item">
+                  <h4>${product.name}</h4>
+                  <p>${product.description}</p>
+                  <p>Precio: $${product.price.toFixed(2)}</p>
+                  <p>Cantidad: ${product.quantity}</p>
+                  <p>Total: $${(product.price * product.quantity).toFixed(2)}</p>
+                </div>
+              `);
+            });
+          }
+        } catch (error) {
+          console.error('Error loading sold products:', error);
+          $('#sold-products-container').html('<p>Error loading products.</p>');
         }
       }
 
       displaySoldProducts();
     });
   </script>
-
 </body>
 
 </html>
