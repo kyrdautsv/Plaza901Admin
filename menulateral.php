@@ -37,12 +37,6 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/tables/data.html" class="nav-link active">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Roles</p>
-                  </a>
-                </li>
-                <li class="nav-item">
                   <a href="./usuarios.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Usuarios</p>
