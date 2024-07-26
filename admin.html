@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Pedidos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #343a40;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 12px 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e9ecef;
+        }
+        button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Lista de Pedidos</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Número de Pedido</th>
+                <th>Fecha</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>2024-07-25</td>
+                <td><button onclick="window.location.href='././avance_pedido_comprovante.php'">Ver PDF</button></td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>2024-07-26</td>
+                <td><button onclick="window.location.href='ruta/al/pdf2.pdf'">Ver PDF</button></td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>2024-07-27</td>
+                <td><button onclick="window.location.href='ruta/al/pdf3.pdf'">Ver PDF</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
